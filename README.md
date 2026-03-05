@@ -59,13 +59,14 @@ npx serve -l 5173
 
 #puis on peut lacer le site http://localhost:5173 ou (http://127.0.0.1:5173)
 ```
+---
 ## Données
 
 ***movies.json*** contient les informations sur les films.
 
 Les dossiers ***images/*** et ***Images/*** contiennent les ressources visuelles.
 
-
+---
 ## Documentation
 ***Projet.md*** : description globale du projet.
 
