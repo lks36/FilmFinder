@@ -2,7 +2,7 @@
 
 ## Description du projet
 
-Ce dépôt contient les travaux réalisés dans le cadre du module **Opsci 2025**, notamment les travaux pratiques **TME2** et **TME3**.
+Ce dépôt contient les travaux réalisés dans le cadre du module **Opsci 2025**, notamment les travaux pratiques **TME2**.
 
 L'objectif principal du projet est de concevoir une application web simple permettant :
 
