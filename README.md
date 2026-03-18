@@ -33,6 +33,13 @@ Le projet est organisé par TME et sépare clairement les composants front-end e
 
 ## Installation et exécution
 
+Avant de lancer le site, on doit obtenir une clé API / token depuis le site TMDB,
+inscrivez et conncetez :
+https://www.themoviedb.org/settings/api
+
+Vous pouvez tester directement sur un navigateur avec ce lien, on modifiant api key :
+https://api.themoviedb.org/3/movie/550?api_key=COLLEZ_VOTRE_API_KEY_ICI
+
 ### 1. Cloner le dépôt
 
 ```bash
