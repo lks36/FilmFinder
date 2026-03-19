@@ -2,7 +2,7 @@
 # Le projet est entrain d'être mise à jour 
 ## Description du projet
 
-Ce dépôt contient les travaux réalisés dans le cadre du module **Opsci 2025**, notamment les travaux pratiques **TME2**.
+Ce dépôt contient les travaux réalisés dans le cadre du module **Opsci 2025**.
 
 L'objectif principal du projet est de concevoir une application web simple permettant :
 
@@ -77,8 +77,4 @@ Les dossiers ***images/*** et ***Images/*** contiennent les ressources visuelles
 ## Documentation
 ***Projet.md*** : description globale du projet.
 
-***TME2.md*** : consignes du TME2.
-
-[RapportTME2.md](./TME2/RapportTME2.md) : rapport détaillé du travail réalisé TME2
-
-***TME3.md*** : consignes du TME3.md
+[RapportTME2.md](./TME2/RapportTME2.md) : rapport détaillé du travail réalisé
