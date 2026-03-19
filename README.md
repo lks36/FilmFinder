@@ -1,5 +1,5 @@
 # Projet d'étude - Projet Opsci
-
+# Le projet est entrain d'être mise à jour 
 ## Description du projet
 
 Ce dépôt contient les travaux réalisés dans le cadre du module **Opsci 2025**, notamment les travaux pratiques **TME2**.
