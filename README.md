@@ -13,6 +13,7 @@ L'objectif principal du projet est de concevoir une application web simple perme
 
 Le projet est organisé par TME et sépare clairement les composants front-end et back-end.
 
+à améliorer !
 ---
 
 ## Fonctionnalités
