@@ -64,7 +64,7 @@ TMDB_TOKEN=votre_token_access_ici
 ```bash
 git clone https://github.com/lks36/FilmFinder.git
 
-cd backend
+cd Finder/backend
 pip install fastapi uvicorn python-dotenv requests
 
 uvicorn main:app --reload
