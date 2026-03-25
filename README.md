@@ -56,7 +56,7 @@ https://www.themoviedb.org/settings/api
 Vous pouvez tester directement sur un navigateur avec ce lien, on modifiant api key :
 https://api.themoviedb.org/3/movie/550?api_key=COLLEZ_VOTRE_API_KEY_ICI
 
-puis ajouter dans .env le token dans le dossier backend/ :
+puis créez le .env dans le dossier backend/ et mettre le token comme ceci:
 TMDB_TOKEN=votre_token_access_ici
 
 #### Python
@@ -84,6 +84,6 @@ uvicorn main:app --reload
 
 ---
 ## Données
-*exports* : les données json 
+*exports* :  export (scraping / extraction)
 
 ---
