@@ -1,5 +1,5 @@
 # Projet d'étude - Projet Opsci
-# Le projet est entrain d'être mise à jour 
+# Le projet est entrain d'être mise à jour ！
 
 ## Description du projet
 
