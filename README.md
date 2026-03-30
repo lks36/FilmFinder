@@ -1,5 +1,5 @@
 # Projet d'étude - Projet Opsci
-# mise à jour
+# mise à jour avec Docker
 
 ## Description du projet
 
