@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: netflix-config
+  namespace: netflix-app
+data:
+  MONGODB_URI: "mongodb://mongo-service:27017"
+  MONGODB_DB: "netflix"
+  REDIS_URL: "redis://redis-service:6379"
+  ES_URL: "http://elasticsearch-service:9200"

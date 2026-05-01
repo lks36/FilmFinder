@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netplixe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-left">
+      <div class="logo">NETPLIXE</div>
+      <nav class="nav-links">
+        <a href="#" class="nav-link active" data-type="">Accueil</a>
+        <a href="#" class="nav-link" data-type="Movie">Films</a>
+        <a href="#" class="nav-link" data-genre="Action">Action</a>
+        <a href="#" class="nav-link" data-genre="Drama">Drames</a>
+        <a href="#" class="nav-link" data-genre="Comedy">Comédies</a>
+        <a href="#" class="nav-link" data-genre="Thriller">Thriller</a>
+        <a href="#" class="nav-link" id="navFavorites" data-section="favorites">
+          Mes Favoris
+          <span id="favBadge" class="fav-nav-badge hidden">0</span>
+        </a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <!-- Recherche avancée toggle -->
+      <button class="icon-btn" id="advToggleBtn" aria-label="Recherche avancée" title="Filtres avancés">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+          <path d="M3 6h18v2H3zm3 5h12v2H6zm3 5h6v2H9z"/>
+        </svg>
+      </button>
+      <!-- Recherche simple -->
+      <div class="search-container" id="searchContainer">
+        <button class="icon-btn" id="searchToggle" aria-label="Rechercher">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+            <path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </button>
+        <input id="searchInput" type="text" class="search-input" placeholder="Titres, genres..." autocomplete="off" />
+      </div>
+      <button class="icon-btn" aria-label="Notifications">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+        </svg>
+      </button>
+      <div class="profile-btn">
+        <div class="profile-avatar"></div>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PANNEAU RECHERCHE AVANCÉE ===== -->
+  <div id="advSearchPanel" class="adv-search-panel hidden">
+    <div class="adv-search-inner">
+      <div class="adv-field">
+        <label for="advQ">Recherche</label>
+        <input id="advQ" type="text" placeholder="Titre, description, acteurs..." />
+      </div>
+      <div class="adv-field">
+        <label for="advGenre">Genre</label>
+        <select id="advGenre">
+          <option value="">Tous les genres</option>
+          <option value="Action">Action</option>
+          <option value="Adventure">Aventure</option>
+          <option value="Animation">Animation</option>
+          <option value="Comedy">Comédie</option>
+          <option value="Crime">Crime</option>
+          <option value="Documentary">Documentaire</option>
+          <option value="Drama">Drame</option>
+          <option value="Family">Famille</option>
+          <option value="Fantasy">Fantaisie</option>
+          <option value="Horror">Horreur</option>
+          <option value="Music">Musique</option>
+          <option value="Mystery">Mystère</option>
+          <option value="Romance">Romance</option>
+          <option value="Science Fiction">Science-Fiction</option>
+          <option value="Thriller">Thriller</option>
+          <option value="War">Guerre</option>
+          <option value="Western">Western</option>
+        </select>
+      </div>
+      <div class="adv-field">
+        <label for="advMinYear">Année min</label>
+        <input id="advMinYear" type="number" placeholder="ex : 2000" min="1900" max="2024" />
+      </div>
+      <div class="adv-field">
+        <label for="advMaxYear">Année max</label>
+        <input id="advMaxYear" type="number" placeholder="ex : 2024" min="1900" max="2024" />
+      </div>
+      <div class="adv-field">
+        <label for="advMinRating">Note min (0–10)</label>
+        <input id="advMinRating" type="number" placeholder="ex : 7" min="0" max="10" step="0.5" />
+      </div>
+      <div class="adv-actions">
+        <button id="advSearchBtn" class="adv-submit-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+          Rechercher
+        </button>
+        <button id="advResetBtn" class="adv-reset-btn">Réinitialiser</button>
+        <button id="advCloseBtn" class="adv-close-btn">✕ Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-backdrop" id="heroBackdrop"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-genres" id="heroGenres"></div>
+      <h1 class="hero-title" id="heroTitle">Chargement...</h1>
+      <div class="hero-meta" id="heroMeta"></div>
+      <p class="hero-desc" id="heroDesc"></p>
+      <div class="hero-buttons">
+        <button class="btn-play" id="heroPlayBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"/></svg>
+          Lecture
+        </button>
+        <button class="btn-info" id="heroInfoBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          Plus d'infos
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTENT ROWS ===== -->
+  <main class="content-rows">
+
+    <!-- Mes Favoris -->
+    <section id="favoritesSection" class="row-section hidden">
+      <h2 class="row-title">
+        Mes Favoris
+        <span id="favCount" class="fav-section-count"></span>
+      </h2>
+      <div id="favoritesGrid" class="filter-grid"></div>
+    </section>
+
+    <!-- Résultats de recherche / filtre -->
+    <section id="filterSection" class="row-section hidden">
+      <h2 class="row-title" id="filterTitle">Résultats</h2>
+      <p id="filterStats" class="filter-stats"></p>
+      <div id="filterGrid" class="filter-grid"></div>
+      <div id="filterPagination" class="pagination-controls hidden"></div>
+    </section>
+
+    <!-- Populaire -->
+    <section class="row-section">
+      <h2 class="row-title">Populaire sur Netplixe</h2>
+      <div class="row-wrapper">
+        <button class="row-arrow arrow-left" data-row="rowPopular">&#8249;</button>
+        <div id="rowPopular" class="cards-row"></div>
+        <button class="row-arrow arrow-right" data-row="rowPopular">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- Tendances -->
+    <section class="row-section">
+      <h2 class="row-title">Tendances actuelles</h2>
+      <div class="row-wrapper">
+        <button class="row-arrow arrow-left" data-row="rowTrending">&#8249;</button>
+        <div id="rowTrending" class="cards-row"></div>
+        <button class="row-arrow arrow-right" data-row="rowTrending">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- À voir -->
+    <section class="row-section">
+      <h2 class="row-title">À voir absolument</h2>
+      <div class="row-wrapper">
+        <button class="row-arrow arrow-left" data-row="rowMustWatch">&#8249;</button>
+        <div id="rowMustWatch" class="cards-row"></div>
+        <button class="row-arrow arrow-right" data-row="rowMustWatch">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- Action -->
+    <section class="row-section">
+      <h2 class="row-title">Action &amp; Aventure</h2>
+      <div class="row-wrapper">
+        <button class="row-arrow arrow-left" data-row="rowAction">&#8249;</button>
+        <div id="rowAction" class="cards-row"></div>
+        <button class="row-arrow arrow-right" data-row="rowAction">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- Drames -->
+    <section class="row-section">
+      <h2 class="row-title">Drames &amp; Émotions</h2>
+      <div class="row-wrapper">
+        <button class="row-arrow arrow-left" data-row="rowDrama">&#8249;</button>
+        <div id="rowDrama" class="cards-row"></div>
+        <button class="row-arrow arrow-right" data-row="rowDrama">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- Comédies -->
+    <section class="row-section">
+      <h2 class="row-title">Comédies</h2>
+      <div class="row-wrapper">
+        <button class="row-arrow arrow-left" data-row="rowComedy">&#8249;</button>
+        <div id="rowComedy" class="cards-row"></div>
+        <button class="row-arrow arrow-right" data-row="rowComedy">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- Top 10 -->
+    <section class="row-section">
+      <h2 class="row-title">Top 10 Aujourd'hui</h2>
+      <div class="row-wrapper">
+        <button class="row-arrow arrow-left" data-row="rowTop10">&#8249;</button>
+        <div id="rowTop10" class="cards-row top10-row"></div>
+        <button class="row-arrow arrow-right" data-row="rowTop10">&#8250;</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== MODAL ===== -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-overlay" id="modalBg"></div>
+    <div class="modal-container">
+      <button id="modalClose" class="modal-close">&#x2715;</button>
+      <div id="modalBody"></div>
+      <!-- Films similaires (injectés dynamiquement) -->
+      <div id="modalSimilar" class="modal-similar hidden">
+        <h3 class="modal-similar-title">Films similaires</h3>
+        <div id="modalSimilarRow" class="modal-similar-row"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast de statut -->
+  <div id="statusToast" class="status-toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
