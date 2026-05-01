@@ -13,3 +13,4 @@ Pour lancer l'intégralité du projet en une seule commande, ouvrez un terminal 
 ```bash
 ./start.sh
 ```
+**Rapport** (PDF) :** Disponible dans ce dépôt [Rapport](./Rapport_Netplixe.pdf), il couvre l'intégralité du cycle de vie du projet.
