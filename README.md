@@ -17,7 +17,7 @@ Bienvenue sur le projet Netplixe. Cette application contient :
 
 ## Lancement Rapide (One-Click Deploy)
 
-Pour lancer l'intégralité du projet en une seule commande, ouvrez un terminal à la racine de ce dossier et tapez :
+Pour lancer l'intégralité du projet sur MacOs ou Linux en une seule commande, ouvrez un terminal à la racine de ce dossier et tapez :
 
 ```bash
 ./start.sh
